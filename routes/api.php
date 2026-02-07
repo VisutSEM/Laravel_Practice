@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,6 @@ Route::post('/products', function(Request $request){
     );
     
 });
+
+Route::post('/register', [AuthenticationController::class,'register']);
+Route::post('/login', [AuthenticationController::class,'login']);
